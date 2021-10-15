@@ -2,8 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Main_Page extends StatefulWidget {
 
+class Main_Page extends StatefulWidget {
 
   @override
   _Main_PageState createState() => _Main_PageState();
@@ -71,13 +71,13 @@ class _Main_PageState extends State<Main_Page> {
                 Container(
                   padding: EdgeInsets.only(left:17.0,right:17),
                   child: Image.asset("assets/title7.png",
-                    width:300,
+                    width:400,
                     height:90,
                   ),
                 ),
                 SizedBox(height:20),
                 Container(
-                  height:110,
+                  height:140,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -189,6 +189,7 @@ class _Main_PageState extends State<Main_Page> {
                             ),
                           ),
                           SizedBox(height:15),
+
                           Container(
                             margin: EdgeInsets.only(left:7.0,right:7),
                             width:MediaQuery.of(context).size.width,
@@ -197,19 +198,21 @@ class _Main_PageState extends State<Main_Page> {
                               color:Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.only(left:17.0,right:17),
-                                  child: Text("담당자 이름을 입력해주세요.",
-                                    style:TextStyle(
-                                      color:Color(0xFF9E9E9E),
-                                      fontSize:13,
-                                    ),
+
+                            child: Padding(
+                              padding: const EdgeInsets.only(left:15.0),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border:InputBorder.none,
+                                  labelText: '담당자명을 입력해주세요.',
+                                  labelStyle: TextStyle(
+                                    color:Color(0xFF9E9E9E),
+                                    fontSize:13,
+
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            )
                           ),
                         ],
                       ),
@@ -257,11 +260,15 @@ class _Main_PageState extends State<Main_Page> {
                                     )
                                 ),
                                 SizedBox(width:20),
-                                Container(
-                                  child: Text("'-'제외한 휴대폰 번호를 입력해주세요.",
-                                    style:TextStyle(
-                                      color:Color(0xFF9E9E9E),
-                                      fontSize:13,
+                                Flexible(
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      border:InputBorder.none,
+                                      labelText: "'-' 제외한 휴대폰 번호를 입력해주세요.",
+                                      labelStyle: TextStyle(
+                                          color:Color(0xFF9E9E9E),
+                                        fontSize:13,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -282,42 +289,46 @@ class _Main_PageState extends State<Main_Page> {
                                     color:Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        padding: EdgeInsets.only(left:17.0,right:17),
-                                        child: Text('인증번호 입력',
-                                          style:TextStyle(
+                                  child:  Flexible(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left:15.0),
+                                      child: TextField(
+                                        decoration: InputDecoration(
+                                          border:InputBorder.none,
+                                          labelText: "인증번호 입력",
+                                          labelStyle: TextStyle(
                                             color:Color(0xFF9E9E9E),
                                             fontSize:13,
                                           ),
                                         ),
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ),
 
                               Expanded(
-                                child: Container(
-                                  margin: EdgeInsets.only(right:7),
-                                  width:117,
-                                  height:50,
-                                  decoration: BoxDecoration(
-                                    color:Color(0xFF8778B0),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text('인증번호 받기',
-                                        style:TextStyle(
-                                          color:Colors.white,
-                                          fontSize:13,
-                                        ),
-                                        textAlign: TextAlign.center,
+                                child: InkWell(
+                                  onTap: () {
+                                    print("button");
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 7),
+                                    width: 117,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF8778B0),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      '인증번호 받기',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 13,
                                       ),
-                                    ],
+                                      textAlign: TextAlign.center,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -348,18 +359,18 @@ class _Main_PageState extends State<Main_Page> {
                               color:Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Row(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.only(left:17.0,right:17),
-                                  child: Text('업체명을 입력해주세요.',
-                                    style:TextStyle(
-                                      color:Color(0xFF9E9E9E),
-                                      fontSize:13,
-                                    ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left:15.0),
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  border:InputBorder.none,
+                                  labelText: "업체명을 입력해주세요.",
+                                  labelStyle: TextStyle(
+                                    color:Color(0xFF9E9E9E),
+                                    fontSize:13,
                                   ),
                                 ),
-                              ],
+                              ),
                             ),
                           ),
                           SizedBox(height:5),
@@ -395,28 +406,31 @@ class _Main_PageState extends State<Main_Page> {
                                 ],
                               ),
                               SizedBox(height:30),
-                              Container(
-                                margin: EdgeInsets.only(left:7.0,right:7),
-                                width:MediaQuery.of(context).size.width,
-                                height:50,
-                                decoration: BoxDecoration(
-                                  color:Color(0xFF8778B0),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.only(left:17.0,right:17),
-                                      child: Text('사전예약 신청하기',
-                                        style:TextStyle(
-                                          color:Colors.white,
-                                          fontSize:16,
-                                        ),
+                              InkWell(
+                                onTap: () {
+                                    print("pre order");
+                                },
+                                child: Container(
+                                  margin:
+                                  EdgeInsets.only(left: 7.0, right: 7),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF8778B0),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Container(
+                                    padding: EdgeInsets.only(
+                                        left: 17.0, right: 17),
+                                    child: Text(
+                                      '사전예약 신청하기',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ],
